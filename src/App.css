@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.navegador {
+  font-size: 20px;
+  width: 60em;
+  display: flex;
+  align-items: center;
+}
+
+li a {
+  font-size: 20px;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline-block;
+}

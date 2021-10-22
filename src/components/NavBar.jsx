@@ -1,8 +1,8 @@
 const NavBar = () => {
     return (
         <div>
-            <nav>
-                <ul>
+            <nav class='navegador'>
+                <ul class='nav-links'>
                     <li>
                         <a href="" class="pseudo">Home</a>
                     </li>
