@@ -1,9 +1,11 @@
-import { ComponentePromesas } from './ItemListContainer'
+import Item from './Item'
 
-console.log(product)
-return (
-    { loading ? <h1>Cargando... </h1> :
-        product.map(prod=> <div key={prod.id} className='card w-50 mt-5')
+const ItemList = ({productos}) => {
+    return (
+        <div> {
+            productos.map(prod=> { return <Item prod={prod}/>})} 
+        </div>
+    )
+}
 
-    }
-)
+export default ItemList
