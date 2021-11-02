@@ -1,7 +1,7 @@
 const productos = [
-    {id: 1, foto:'https://static.wikia.nocookie.net/esharrypotter/images/9/9a/Harry_Potter_y_la_Piedra_Filosofal_Portada_Espa%C3%B1ol.PNG/revision/latest?cb=20151020165725', name: 'libro', price: 2000},
-    {id: 2, foto:'https://static.wikia.nocookie.net/esharrypotter/images/9/9a/Harry_Potter_y_la_Piedra_Filosofal_Portada_Espa%C3%B1ol.PNG/revision/latest?cb=20151020165725', name: 'libro2', price: 2000},
-    {id: 3, foto:'https://static.wikia.nocookie.net/esharrypotter/images/9/9a/Harry_Potter_y_la_Piedra_Filosofal_Portada_Espa%C3%B1ol.PNG/revision/latest?cb=20151020165725', name: 'libro3', price: 2000}
+    {id: 1, foto:'https://http2.mlstatic.com/D_NQ_NP_722711-MLA42906730908_072020-O.jpg', name: 'Harry Potter', autor: 'J.K Rowling', price: 1500},
+    {id: 2, foto:'https://http2.mlstatic.com/D_NQ_NP_951620-MLA43677613114_102020-O.jpg', name: 'Dune', autor:'Frank Herbert', price: 2200},
+    {id: 3, foto:'https://www.bookshop.com.uy/media/catalog/product/cache/1/thumbnail/400x/17f82f742ffe127f42dca9de82fb58b1/9/7/97895064422791.jpg', name: 'Juego de tronos', autor:'George R.R. Martin', price: 2600}
 ];
 
 export const getFetch = new Promise ((resolve, reject)=>{
