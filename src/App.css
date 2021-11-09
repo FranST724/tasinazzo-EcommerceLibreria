@@ -67,3 +67,24 @@ li a {
 .card {
 	margin-left: 40px;
 }
+
+.añadir-carrito {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-bottom: 2rem;
+}
+
+.container-carrito {
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+}
+
+.button-carrito {
+	width: 100%;
+}
+
+.custom-btn {
+	width: 100%;
+}

@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './components/ItemDetailContainer'
+import Nosotros from './components/Nosotros';
 
 function App() {
   const returnCount = (count) => {
@@ -16,12 +17,12 @@ function App() {
     <NavBar />
     <Switch>
       <Route exact path='/'>
-    <ItemListContainer greeting = 'Bienvenidos a mi tienda'/>
+    <ItemListContainer/>
       </Route>
     <Route exact path='/categoria/:categoryId' component={ItemListContainer}/>
-    <Route exact path='/categoria/:productId' component={ItemDetailContainer}/>
+    <Route exact path='/producto/:productId' component={ItemDetailContainer}/>
+    <Route exact path='/nosotros' component={Nosotros}/>
     </Switch>
-    <ItemCount stock={6} initial={1} onAdd={returnCount}/>
     </BrowserRouter>
     </div>
   );

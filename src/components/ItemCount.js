@@ -13,14 +13,14 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 		}
 	};
 	return (
-		<div>
-			<div>
-				<button onClick={resta}>-</button>
+		<div className='container-carrito'>
+			<div className='añadir-carrito'>
+				<button onClick={resta} className='btn btn-outline-primary btn-block'>-</button>
 				<h3>{count}</h3>
-				<button onClick={suma}>+</button>
+				<button onClick={suma} className='btn btn-outline-primary btn-block'>+</button>
 			</div>
-			<div>
-				<button onClick={() => onAdd(count)} disabled={!canAdd}>Agregar al carrito</button>
+			<div className='button-carrito'>
+				<button onClick={() => onAdd(count)} disabled={!canAdd} className='btn btn-outline-primary btn-block custom-btn'>Agregar al carrito</button>
 			</div>
 		</div>
 	);

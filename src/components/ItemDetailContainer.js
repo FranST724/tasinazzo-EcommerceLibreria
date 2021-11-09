@@ -13,7 +13,8 @@ const ItemDetailContainer = () => {
         getFetchDetail
         .then( res => {
             console.log(res)
-            setDetail(res.find(prod=> prod.id === productId))
+            console.log(productId)
+            setDetail(res.find(prod=> prod.id === parseInt(productId, 10)))
         })
         .catch(err => console.log(err))
         .finally(()=> setLoading(false))
