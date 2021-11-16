@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 
 const ItemCount = ({ stock, initial, onAdd }) => {
-	const [ count, setCounter ] = useState(initial);
-    const canAdd = count <= stock
+	const [ count, setCount ] = useState(initial);
+	const [cambiarBoton, setCambiarBoton] = useState(false)
+
 	const suma = () => {
-			setCounter(count + 1);
+			setCount(count + 1);
 	};
 
 	const resta = () => {
-		if (count > 1) {
-			setCounter(count - 1);
+		if (count > initial) {
+			setCount(count - 1);
 		}
 	};
+
+	 const handlerOnAdd =()=>{
+		 onAdd(count)
+		 setCount(initial)
+		 setCambiarBoton(true)
+	 }
 	return (
 		<div className='container-carrito'>
 			<div className='añadir-carrito'>
@@ -20,7 +28,13 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 				<button onClick={suma} className='btn btn-outline-primary btn-block'>+</button>
 			</div>
 			<div className='button-carrito'>
-				<button onClick={() => onAdd(count)} disabled={!canAdd} className='btn btn-outline-primary btn-block custom-btn'>Agregar al carrito</button>
+				{ cambiarBoton ?
+				<Link to='/cart'>
+				<button className='btn btn-outline-primary btn-block custom-btn'>Terminar compra</button>
+				</Link>
+				:
+				<button onClick={handlerOnAdd} className='btn btn-outline-primary btn-block custom-btn'>Agregar al carrito</button>
+			}
 			</div>
 		</div>
 	);
