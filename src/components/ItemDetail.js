@@ -1,13 +1,17 @@
 import ItemCount from './ItemCount';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import {CartContext} from './cartcontext'
 
 const ItemDetail = ({detail}) => {
     const [count, setCount] = useState(0)
+    const { lista, addToLista, listaSize} = useContext(CartContext)
+    console.log(lista)
+
     const onAdd = (cant)=>{
+        const nuevoLibro = {...detail, quantity: cant}
+        addToLista(nuevoLibro)
         setCount(cant)
     }
-
-    console.log(count)
     
     return (
         (<div key={detail.id} className='card w-25 mt-5'>

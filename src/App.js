@@ -6,6 +6,7 @@ import ItemCount from './components/ItemCount';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Nosotros from './components/Nosotros';
+import CacheProvider from './components/cartcontext'
 
 function App() {
   const returnCount = (count) => {
@@ -13,6 +14,7 @@ function App() {
 }
   return (
     <div>
+    <CacheProvider>
       <BrowserRouter>
     <NavBar />
     <Switch>
@@ -24,6 +26,7 @@ function App() {
     <Route exact path='/nosotros' component={Nosotros}/>
     </Switch>
     </BrowserRouter>
+    </CacheProvider>
     </div>
   );
 }
