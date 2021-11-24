@@ -1,18 +1,38 @@
-import {useCartContext} from './cartcontext'
+import { CartContext } from './cartcontext';
+import { useContext } from 'react';
 
 const Cart = () => {
+	const { lista, precioTotal, borrarElCarrito, listaSize, addMoreItems } = useContext(CartContext);
 
-    const { cartList, precioTotal, borrarElCarrito } = useCartContext()
+	console.log(lista, 'hola');
 
-    console.log(cartList)
-    return (
-        <div>
-            <h2>Carrito</h2>
-            {cartList.map(prod => <li>{prod.name} {prod.cantidad}</li>)}
-            {`Precio total: ${precioTotal()}`}
-            <button onClick={()=> borrarElCarrito()}>borrar el carrito</button>
-        </div>
-    )
-}
+	const finalizarCompra = () => {
+		alert('Compra finalizada');
+	};
 
-export default Cart
+	return (
+		<div>
+			<h2>Carrito</h2>
+			{listaSize > 0 ? (
+				<div>
+					{lista.map((prod) => (
+						<li>
+							{prod.name} {prod.quantity}
+							<button onClick={() => addMoreItems(prod.id)}>+</button>
+						</li>
+					))}
+					{`Precio total: ${precioTotal()}`}
+					<button onClick={() => borrarElCarrito()}>borrar el carrito</button>
+
+					{listaSize > 0 && <button onClick={() => finalizarCompra()}>Finalizar compra</button>}
+				</div>
+			) : (
+				<div>
+					<p>El carrito está vacio</p>
+				</div>
+			)}
+		</div>
+	);
+};
+
+export default Cart;
