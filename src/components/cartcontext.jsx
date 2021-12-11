@@ -10,7 +10,6 @@ function CacheProvider({ defaultValue = [], children }) {
 	const listaSize = lista.reduce((acum, prod) => acum + prod.quantity, 0);
 
 	function addMoreItems(id) {
-		console.log(id);
 		const nuevaLista = [ ...lista ];
 		for (let index = 0; index < nuevaLista.length; index++) {
 			console.log(nuevaLista[index]);

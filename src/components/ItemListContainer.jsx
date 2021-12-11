@@ -18,7 +18,6 @@ const ItemListContainer = () => {
 			query
 				.get()
 				.then((querySnapshot) => {
-					console.log(querySnapshot, '<==');
 					if (querySnapshot.size === 0) {
 						console.log('No Result!!');
 					}
@@ -26,7 +25,6 @@ const ItemListContainer = () => {
 						...doc.data(),
 						id: doc.data().n_id
 					}));
-					console.log('==> data', productList);
 					setProductos(productList);
 				})
 				.catch((error) => {

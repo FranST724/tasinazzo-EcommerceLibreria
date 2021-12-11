@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const CartWidget = () => {
 	const { listaSize } = useContext(CartContext);
 
-	console.log(listaSize);
 	return listaSize > 0 ? (
 		<Link to="/cart">
 			<img src={iconoCarrito} className="carrito" />
