@@ -56,8 +56,7 @@ function CacheProvider({ defaultValue = [], children }) {
 				listaSize,
 				precioTotal,
 				borrarElCarrito,
-				borrarItem,
-				addMoreItems
+				borrarItem
 			}}
 		>
 			{children}

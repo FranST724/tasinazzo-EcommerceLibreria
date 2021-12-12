@@ -4,7 +4,7 @@ import { getFirestore } from '../firebase';
 import firebase from 'firebase';
 
 const Cart = () => {
-	const { lista, precioTotal, borrarElCarrito, listaSize, addMoreItems } = useContext(CartContext);
+	const { lista, precioTotal, borrarElCarrito, listaSize } = useContext(CartContext);
 
 	const finalizarCompra = () => {
 		const db = getFirestore();
@@ -36,10 +36,12 @@ const Cart = () => {
 			{listaSize > 0 ? (
 				<div>
 					{lista.map((prod) => (
-						<li>
-							{prod.name} {prod.quantity}
-							<button onClick={() => addMoreItems(prod.id)}>+</button>
-						</li>
+						<div>
+							<li>
+								{prod.name}
+								<p>Cantidad: {prod.quantity}</p>
+							</li>
+						</div>
 					))}
 					{`Precio total: ${precioTotal()}`}
 					<button onClick={() => borrarElCarrito()}>borrar el carrito</button>
