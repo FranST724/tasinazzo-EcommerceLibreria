@@ -14,7 +14,6 @@ const ItemListContainer = () => {
 			let itemCollection = db.collection('items');
 			let query = categoryId ? itemCollection.where('category', '==', categoryId) : itemCollection;
 
-			console.log(query);
 			query
 				.get()
 				.then((querySnapshot) => {
