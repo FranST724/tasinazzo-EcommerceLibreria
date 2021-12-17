@@ -14,11 +14,9 @@ const ItemDetailContainer = () => {
 			let itemCollection = db.collection('items');
 			let query = productId ? itemCollection.where('n_id', '==', parseInt(productId, 10)) : itemCollection;
 
-			console.log(query);
 			query
 				.get()
 				.then((querySnapshot) => {
-					console.log(querySnapshot, '<==');
 					if (querySnapshot.size === 0) {
 						console.log('No Result!!');
 					}

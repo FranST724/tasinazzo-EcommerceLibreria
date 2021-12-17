@@ -88,3 +88,38 @@ li a {
 .custom-btn {
 	width: 100%;
 }
+
+img.card-body {
+	width: 260px;
+}
+
+.card-body.nameCart {
+	font-size: 20px;
+	margin-top: 2%;
+}
+
+.card-body.qtyCart {
+	font-size: 20px;
+	margin-bottom: 2%;
+}
+
+.header-form {
+	margin-left: 1%;
+	margin-top: 2%;
+}
+
+.form-cart {
+	margin: 1%;
+}
+
+.form-cart input {
+	display: flex;
+	margin: 2px;
+}
+
+.btn.btn-outline-primary.btn-block.borrarCart,
+.btn.btn-outline-primary.btn-block.finalizarCart {
+	display: flex;
+	margin-top: 2%;
+	margin-left: 1%;
+}

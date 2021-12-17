@@ -19,7 +19,7 @@ const Cart = () => {
 
 	const { lista, precioTotal, borrarElCarrito, listaSize } = useContext(CartContext);
 
-	const finalizarCompra = (e) => {
+	const finalizarCompra = () => {
 		const db = getFirestore();
 		const ordersCollection = db.collection('orders');
 
@@ -47,28 +47,36 @@ const Cart = () => {
 
 	return (
 		<div>
-			<h2>Carrito</h2>
+			<h3 className="header-carrito">Carrito</h3>
 			{listaSize > 0 ? (
 				<div>
 					{lista.map((prod) => (
-						<div>
-							<li>
-								<img src={prod.foto} />
-								{prod.name}
-								<p>Cantidad: {prod.quantity}</p>
-							</li>
+						<div classname="card w-25 mt-5">
+							<div className="card-body nameCart">Libro: {prod.name}</div>
+							<img src={prod.foto} className="card-body" />
+							<div className="card-body qtyCart">Cantidad: {prod.quantity}</div>
 						</div>
 					))}
 					{`Precio total: ${precioTotal()}`}
-					<button onClick={() => borrarElCarrito()}>borrar el carrito</button>
+					<button onClick={() => borrarElCarrito()} className="btn btn-outline-primary btn-block borrarCart">
+						borrar el carrito
+					</button>
 
-					<form onSubmit={finalizarCompra} onChange={handleChange}>
-						<input type="text" name="name" placeholder="name" value={formData.name} />
-						<input type="text" name="phone" placeholder="tel" value={formData.phone} />
+					<h4 className="header-form">Formulario de confirmación de compra:</h4>
+					<form onSubmit={finalizarCompra} onChange={handleChange} className="form-cart">
+						<input type="text" name="name" placeholder="nombre" value={formData.name} />
+						<input type="text" name="phone" placeholder="teléfono" value={formData.phone} />
 						<input type="email" name="email" placeholder="email" value={formData.email} />
 					</form>
 
-					{listaSize > 0 && <button onClick={() => finalizarCompra()}>Finalizar compra</button>}
+					{listaSize > 0 && (
+						<button
+							onClick={() => finalizarCompra()}
+							className="btn btn-outline-primary btn-block finalizarCart"
+						>
+							Finalizar compra
+						</button>
+					)}
 				</div>
 			) : (
 				<div>
